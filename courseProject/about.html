@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <title>Course Project Home Page</title>
+  </head>
+  <body>
+    <div data-role="page">
+      <div data-role="header">
+        <h1>Welcome to Simeon's Website</h1>
+        <img id="logo" src="assests/logo.svg" alt="website logo" />
+        <a href="#" data-rel="back">Back</a>
+      </div>
+
+      <div data-role="content">
+        <p>
+          Welcome to my about page. To learn more about me please fill out the
+          form below!
+        </p>
+      </div>
+      <div>
+        <ul data-role="listview" data-filter="true">
+          <li><a href="#">Apples</a></li>
+          <li><a href="#">Bananas</a></li>
+          <li><a href="#">Carrots</a></li>
+          <li><a href="#">Dates</a></li>
+          <li><a href="#">Eggplants</a></li>
+          <li><a href="#">Figs</a></li>
+        </ul>
+      </div>
+
+      <br>
+      <br>
+      <br>
+
+      <div>
+        <ul data-role="listview">
+          <li data-icon="star"><a href"#">Apples</a></li>
+          <li data-icon="star"><a href"#">Bananas</a></li>
+          <li data-icon="star"><a href"#">Carrots</a></li>
+          <li data-icon="star"><a href"#">Dates</a></li>
+          <li data-icon="star"><a href"#">Eggplants</a></li>
+          <li data-icon="star"><a href"#">Figs</a></li>
+          <li data-icon="star"><a href"#">Grapes</a></li>
+        </ul>
+      </div>
+      
+      <br>
+      <br>
+      <br>
+
+      <div>
+        <form>
+          <label for="text-input">Name:</label>
+          <input type="text" name="text-input" id="text-input" />
+
+          <label for="textarea">Email:</label>
+          <textarea name="textarea" id="textarea"></textarea>
+
+          <label for="select-choice">Favorite Ice cream:</label>
+          <select name="select-choice" id="select-choice">
+            <option value="option1">Vanilla</option>
+            <option value="option2">Chocolate</option>
+            <option value="option3">Carmel</option>
+          </select>
+
+          <fieldset data-role="controlgroup">
+            <legend>How did you hear about me:</legend>
+            <input type="checkbox" name="checkbox1" id="checkbox1" />
+            <label for="checkbox1">Google</label>
+
+            <input type="checkbox" name="checkbox2" id="checkbox2" />
+            <label for="checkbox2">School</label>
+
+            <input type="checkbox" name="checkbox3" id="checkbox3" />
+            <label for="checkbox3">Linkedin</label>
+          </fieldset>
+
+          <fieldset data-role="controlgroup">
+            <legend>Will the Wild Win the first playoff Series?:</legend>
+            <input
+              type="radio"
+              name="radio-choice"
+              id="radio-choice1"
+              value="choice1"
+            />
+            <label for="radio-choice1">Duh!!</label>
+            <input
+              type="radio"
+              name="radio-choice"
+              id="radio-choice2"
+              value="choice2"
+            />
+
+            <label for="radio-choice2">You Wish!</label>
+
+            <input
+              type="radio"
+              name="radio-choice"
+              id="radio-choice3"
+              value="choice3"
+            />
+            <label for="radio-choice3">YES!!!</label>
+          </fieldset>
+
+          <button type="submit">Submit</button>
+        </form>
+
+      <br>
+      <br>
+      <br>
+
+      </div>
+      <div data-role="content">
+        This will test my HTML5 localStorage in my app.
+        </p>
+        <textarea class="localstorage" placeholder="Anything you type here will be saved with HTML5 localStorage." autofocus></textarea>
+        <button class="clear">Clear localStorage</button>
+        <button class="empty">Empty localStorage</button>
+        </div>
+
+      <div data-role="footer">
+        <h4>&copy; 2023 My App. All Rights Reserved</h4>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  (function () {
+      const rasm = document.querySelector('.localstorage');
+  
+      function supportsLocalStorage() {
+          return typeof Storage !== 'undefined';
+      }
+  
+      if (!supportsLocalStorage()) {
+          rasm.value = 'Your browser does not support localStorage.';
+      } else {
+          try {
+              setInterval(() => {
+                  localStorage.setItem('autosave', rasm.value);
+              }, 1000);
+          } catch (e) {
+              if (e == QUOTA_EXCEEDED_ERR) {
+                  alert('Quota exceeded!');
+              }
+          }
+          if (localStorage.getItem('autosave')) {
+              rasm.value = localStorage.getItem('autosave');
+          }
+          document.querySelector('.clear').onclick = function () {
+              rasm.value = '';
+              localStorage.removeItem('autosave');
+          };
+          document.querySelector('.empty').onclick = function () {
+              rasm.value = '';
+              localStorage.clear();
+          };
+      }
+  })();
+  </script>
+  
