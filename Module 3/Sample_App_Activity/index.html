@@ -16,12 +16,20 @@
 <body>
 
 <div id="page" data-role="page" data-theme="a" data-add-back-btn="true">
+	<div data-role="panel" id="myPanel">
+		<h2>Panel Header</h2>
+		<ul data-role="listview" data-theme="c">
+			<li class="menu"><a href="#">Secret Menu 1</a></li>
+			<li class="menu"><a href="#">Secret Menu 2</a></li>
+		</ul>
+	</div>
 	<div data-role="header" data-theme="a">
 	  <div class="logo"><img src="images/rasmussen_logo.png" width="218" height="45" alt=""/></div>
 	</div>
 
   <div data-role="header">
     <h1>Page Header</h1>
+		<a href="#myPanel" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">Open Panel</a>
   </div>
 
 	<div data-role="content">
