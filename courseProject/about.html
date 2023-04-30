@@ -124,7 +124,7 @@
       <div data-role="content">
         This will test my HTML5 localStorage in my app.
         </p>
-        <textarea class="localstorage" placeholder="Anything you type here will be saved with HTML5 localStorage." autofocus></textarea>
+        <textarea class="localstorage" placeholder="What is your Favorite items?" autofocus></textarea>
         <button class="clear">Clear localStorage</button>
         <button class="empty">Empty localStorage</button>
         </div>
@@ -152,7 +152,7 @@
                   localStorage.setItem('autosave', rasm.value);
               }, 1000);
           } catch (e) {
-              if (e == QUOTA_EXCEEDED_ERR) {
+              if (e === QUOTA_EXCEEDED_ERR) {
                   alert('Quota exceeded!');
               }
           }

@@ -87,4 +87,15 @@ img {
   main {
     padding: 20px;
   }
+
+  .ui-footer .ui-title {
+    font-size: 0.8em;
+    font-weight: normal;
+  }
+  h3, h4 {
+    margin-bottom: 0;
+  }
+  h3 + p, h4 + p {
+    margin-top: 0;	
+  }
 }
